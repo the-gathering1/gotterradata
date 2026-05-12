@@ -613,6 +613,210 @@
   }
   .btn-ghost:hover { border-color: var(--teal); background: rgba(26,140,110,0.06); }
  
+  /* COMPARACION */
+  #comparacion {
+    padding: 6rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .comp-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    align-items: start;
+  }
+
+  .comp-intro p {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    line-height: 1.8;
+  }
+
+  .comp-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .comp-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  }
+  .comp-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(26,140,110,0.1);
+    border-color: var(--teal-mid);
+  }
+
+  .comp-card-flag {
+    padding: 1.4rem 1.6rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .comp-flag-emoji {
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  .comp-flag-meta {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .comp-country {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--ink);
+  }
+
+  .comp-tag {
+    display: inline-block;
+    background: var(--teal-light);
+    color: var(--teal);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    margin-top: 0.25rem;
+  }
+
+  .comp-card-body {
+    padding: 1.2rem 1.6rem 1.8rem;
+  }
+
+  .comp-card-title {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .comp-card-text {
+    font-size: 0.875rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+
+  .comp-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .comp-badge {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.25rem 0.7rem;
+    border-radius: 50px;
+    border: 1px solid var(--border);
+    color: var(--ink-soft);
+  }
+
+  .comp-table-wrap {
+    margin-top: 4rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .comp-table-header {
+    background: var(--teal);
+    padding: 1.2rem 1.6rem;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .comp-th {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+  .comp-th:first-child { color: #fff; }
+
+  .comp-table-row {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1.1rem 1.6rem;
+    border-bottom: 1px solid var(--border);
+    align-items: center;
+    transition: background 0.2s;
+  }
+  .comp-table-row:last-child { border-bottom: none; }
+  .comp-table-row:hover { background: var(--teal-light); }
+
+  .comp-td {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+
+  .comp-td-name {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+  .comp-td-name small {
+    display: block;
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: var(--muted);
+    margin-top: 0.1rem;
+  }
+
+  .comp-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+  }
+  .comp-check.yes {
+    background: var(--teal-light);
+    color: var(--teal);
+    font-size: 0.75rem;
+  }
+  .comp-check.no {
+    background: #f9f0ee;
+    color: #c47060;
+    font-size: 0.75rem;
+  }
+  .comp-check.partial {
+    background: #fef3e2;
+    color: var(--amber);
+    font-size: 0.75rem;
+  }
+  .comp-row-highlight { background: rgba(124,185,124,0.07); }
+
+  @media (max-width: 900px) {
+    #comparacion { padding: 4rem 1.5rem; }
+    .comp-intro { grid-template-columns: 1fr; gap: 1.5rem; }
+    .comp-cards { grid-template-columns: 1fr; }
+    .comp-table-wrap { overflow-x: auto; }
+    .comp-table-header,
+    .comp-table-row { min-width: 680px; }
+  }
+
   /* FOOTER */
   footer {
     background: var(--ink);
@@ -679,6 +883,7 @@
     <li><a href="#sensores">Sensores</a></li>
     <li><a href="#plataforma">Plataforma</a></li>
     <li><a href="#ciudadanos">Reportar</a></li>
+    <li><a href="#comparacion">Comparación</a></li>
   </ul>
   <a class="nav-btn" href="#ciudadanos">Participar</a>
 </nav>
@@ -946,8 +1151,8 @@
       <h2 class="section-heading">Tu reporte puede marcar la diferencia</h2>
       <p>Got TerraData no es solo una herramienta tecnologica, es una red colaborativa. Si ves una situacion de riesgo en tu comunidad, puedes reportarla directamente en la plataforma. Tu informacion se integra al mapa de incidentes y es revisada de inmediato por el equipo de monitoreo.</p>
       <div class="cta-row">
-        <a href="nigg" class="btn-teal">Enviar un reporte</a>
-        <a href="https://docs.google.com/document/d/1bF5xM7CgoWS_EzyqU_OCsdaVngGEqmam5ECagIcye_Q/edit?usp=sharing" class="btn-ghost">Conocer más</a>
+        <a href="#" class="btn-teal">Enviar un reporte</a>
+        <a href="#" class="btn-ghost">Conocer más</a>
       </div>
     </div>
  
@@ -975,6 +1180,149 @@
   </div>
 </section>
  
+<div class="sep"></div>
+
+<!-- COMPARACION DE PROYECTOS -->
+<section id="comparacion">
+  <div class="section-label">Contexto global</div>
+  <h2 class="section-heading">Proyectos similares en América y el mundo</h2>
+
+  <div class="comp-intro">
+    <p>
+      Got TerraData no es el único esfuerzo en la región por aprovechar la tecnología para cuidar el medioambiente.
+      Iniciativas en Perú, Filipinas y Ecuador comparten objetivos similares: recopilar datos ambientales en tiempo real para
+      proteger ecosistemas y comunidades. Conocer estos proyectos nos permite entender mejor el campo y identificar
+      lo que hace único a nuestro enfoque.
+    </p>
+    <p>
+      Mientras algunos proyectos se enfocan exclusivamente en robótica acuática o sensores IoT agrícolas, Got TerraData
+      integra múltiples capas — robot terrestre, participación ciudadana y alertas tempranas — en una sola plataforma
+      orientada a la gestión del riesgo comunitario.
+    </p>
+  </div>
+
+  <div class="comp-cards">
+
+    <!-- PERU -->
+    <div class="comp-card">
+      <div class="comp-card-flag">
+        <div class="comp-flag-emoji">🇵🇪</div>
+        <div class="comp-flag-meta">
+          <span class="comp-country">Perú — PUCP</span>
+          <span class="comp-tag">Robótica acuática</span>
+        </div>
+      </div>
+      <div class="comp-card-body">
+        <div class="comp-card-title">Robots autónomos para monitoreo de cuerpos de agua</div>
+        <p class="comp-card-text">
+          La Pontificia Universidad Católica del Perú desarrolló robots que navegan ríos y lagos para medir variables
+          ambientales y tomar muestras sin exponer personas a zonas peligrosas. El sistema ha sido probado en selva
+          amazónica y se proyecta su uso en la Antártida.
+        </p>
+        <div class="comp-badges">
+          <span class="comp-badge">Robótica móvil</span>
+          <span class="comp-badge">Calidad del agua</span>
+          <span class="comp-badge">Zonas remotas</span>
+          <span class="comp-badge">Investigación científica</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILIPINAS -->
+    <div class="comp-card">
+      <div class="comp-card-flag">
+        <div class="comp-flag-emoji">🇵🇭</div>
+        <div class="comp-flag-meta">
+          <span class="comp-country">Filipinas</span>
+          <span class="comp-tag">IoT Agrícola</span>
+        </div>
+      </div>
+      <div class="comp-card-body">
+        <div class="comp-card-title">IoT-Based Water Quality Monitoring System</div>
+        <p class="comp-card-text">
+          Aplica el Internet de las Cosas en la agricultura: sensores conectados monitorean humedad del suelo,
+          temperatura, clima y estado de los cultivos en tiempo real. Incluye riego automatizado, rastreo de ganado
+          por GPS y estaciones meteorológicas inteligentes para reducir riesgos productivos.
+        </p>
+        <div class="comp-badges">
+          <span class="comp-badge">IoT</span>
+          <span class="comp-badge">Agricultura</span>
+          <span class="comp-badge">Riego automatizado</span>
+          <span class="comp-badge">Clima</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ECUADOR -->
+    <div class="comp-card">
+      <div class="comp-card-flag">
+        <div class="comp-flag-emoji">🇪🇨</div>
+        <div class="comp-flag-meta">
+          <span class="comp-country">Ecuador</span>
+          <span class="comp-tag">IA Acuícola</span>
+        </div>
+      </div>
+      <div class="comp-card-body">
+        <div class="comp-card-title">Sistema inteligente de monitoreo acuícola con IoT e IA</div>
+        <p class="comp-card-text">
+          Optimiza la producción de camarones usando inteligencia artificial y sensores que monitorean temperatura,
+          oxígeno disuelto y calidad del agua. La IA detecta patrones, anticipa enfermedades y apoya decisiones
+          sobre alimentación y condiciones del cultivo para aumentar productividad y reducir impacto ambiental.
+        </p>
+        <div class="comp-badges">
+          <span class="comp-badge">Inteligencia Artificial</span>
+          <span class="comp-badge">Acuicultura</span>
+          <span class="comp-badge">Oxígeno disuelto</span>
+          <span class="comp-badge">Producción sostenible</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABLA COMPARATIVA -->
+  <div class="comp-table-wrap">
+    <div class="comp-table-header">
+      <div class="comp-th">Proyecto</div>
+      <div class="comp-th">Robot / HW móvil</div>
+      <div class="comp-th">Alertas tempranas</div>
+      <div class="comp-th">Participación ciudadana</div>
+      <div class="comp-th">Enfoque comunitario</div>
+    </div>
+
+    <div class="comp-table-row comp-row-highlight">
+      <div class="comp-td comp-td-name">Got TerraData <small>Panamá — nuestro proyecto</small></div>
+      <div class="comp-td"><span class="comp-check yes">✓</span></div>
+      <div class="comp-td"><span class="comp-check yes">✓</span></div>
+      <div class="comp-td"><span class="comp-check yes">✓</span></div>
+      <div class="comp-td"><span class="comp-check yes">✓</span></div>
+    </div>
+
+    <div class="comp-table-row">
+      <div class="comp-td comp-td-name">PUCP — Robots acuáticos <small>Perú</small></div>
+      <div class="comp-td"><span class="comp-check yes">✓</span></div>
+      <div class="comp-td"><span class="comp-check partial">~</span></div>
+      <div class="comp-td"><span class="comp-check no">✗</span></div>
+      <div class="comp-td"><span class="comp-check no">✗</span></div>
+    </div>
+
+    <div class="comp-table-row">
+      <div class="comp-td comp-td-name">IoT Agrícola <small>Filipinas</small></div>
+      <div class="comp-td"><span class="comp-check no">✗</span></div>
+      <div class="comp-td"><span class="comp-check partial">~</span></div>
+      <div class="comp-td"><span class="comp-check no">✗</span></div>
+      <div class="comp-td"><span class="comp-check no">✗</span></div>
+    </div>
+
+    <div class="comp-table-row">
+      <div class="comp-td comp-td-name">Sistema acuícola IA <small>Ecuador</small></div>
+      <div class="comp-td"><span class="comp-check no">✗</span></div>
+      <div class="comp-td"><span class="comp-check partial">~</span></div>
+      <div class="comp-td"><span class="comp-check no">✗</span></div>
+      <div class="comp-td"><span class="comp-check no">✗</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Got <span>Terra</span>Data</div>
@@ -983,6 +1331,7 @@
     <a href="#proyecto">El Proyecto</a>
     <a href="#sistema">Sistema</a>
     <a href="#ciudadanos">Reportar</a>
+    <a href="#comparacion">Comparación</a>
   </div>
 </footer>
  
@@ -1015,7 +1364,7 @@
     });
   }, { threshold: 0.08 });
  
-  document.querySelectorAll('.pillar, .step-item, .sensor-card, .report-btn').forEach(el => {
+  document.querySelectorAll('.pillar, .step-item, .sensor-card, .report-btn, .comp-card').forEach(el => {
     el.style.opacity = '0';
     obs.observe(el);
   });
